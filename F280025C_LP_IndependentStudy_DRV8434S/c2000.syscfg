@@ -1,0 +1,80 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F28002x" --package "80QFP" --part "F28002x_80QFP" --product "C2000WARE@3.00.00.00"
+ * @versions {"tool":"1.9.0+2015","templates":null}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const epwm   = scripting.addModule("/driverlib/epwm.js", {}, false);
+const epwm1  = epwm.addInstance();
+const gpio   = scripting.addModule("/driverlib/gpio.js", {}, false);
+const gpio1  = gpio.addInstance();
+const gpio2  = gpio.addInstance();
+const gpio3  = gpio.addInstance();
+const gpio4  = gpio.addInstance();
+const gpio5  = gpio.addInstance();
+const gpio6  = gpio.addInstance();
+const other  = scripting.addModule("/driverlib/other.js", {}, false);
+const other1 = other.addInstance();
+const spi    = scripting.addModule("/driverlib/spi.js", {}, false);
+const spi1   = spi.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+epwm1.useCase                = "CUSTOM";
+epwm1.useInterfacePins       = ["EPWM#_A"];
+epwm1.$name                  = "DRV8434S_EPWM";
+epwm1.epwm.$assign           = "EPWM1";
+epwm1.epwm.epwm_aPin.$assign = "GPIO0";
+
+gpio1.$name           = "USER_LED_RED";
+gpio1.direction       = "GPIO_DIR_MODE_OUT";
+gpio1.gpioPin.$assign = "GPIO31";
+
+gpio2.$name           = "USER_LED_GREEN";
+gpio2.direction       = "GPIO_DIR_MODE_OUT";
+gpio2.gpioPin.$assign = "GPIO34";
+
+gpio3.$name           = "DRV8434S_CS";
+gpio3.direction       = "GPIO_DIR_MODE_OUT";
+gpio3.gpioPin.$assign = "GPIO5";
+
+gpio4.$name           = "DRV8434S_EN";
+gpio4.direction       = "GPIO_DIR_MODE_OUT";
+gpio4.gpioPin.$assign = "GPIO2";
+
+gpio5.$name           = "DRV8434S_SLEEP";
+gpio5.direction       = "GPIO_DIR_MODE_OUT";
+gpio5.gpioPin.$assign = "GPIO3";
+
+gpio6.$name           = "DRV8434S_DIR";
+gpio6.direction       = "GPIO_DIR_MODE_OUT";
+gpio6.gpioPin.$assign = "GPIO1";
+
+other1.$name            = "myOTHER0";
+other1.useCase          = "CUSTOM";
+other1.useInterfacePins = ["TCK","TDI","TDO","TMS","XRSn"];
+
+spi1.$name                   = "DRV8434S_SPI";
+spi1.bitRate                 = 1000000;
+spi1.emulationMode           = "SPI_EMULATION_STOP_AFTER_TRANSMIT";
+spi1.mode                    = "SPI_MODE_MASTER";
+spi1.useCase                 = "CUSTOM";
+spi1.useInterfacePins        = ["SPI@_CLK","SPI@_SIMO","SPI@_SOMI"];
+spi1.spi.spi_simoPin.$assign = "GPIO11";
+spi1.spi.spi_somiPin.$assign = "GPIO10";
+spi1.spi.spi_clkPin.$assign  = "GPIO9";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+other1.other.$suggestSolution        = "OTHER";
+other1.other.tdoPin.$suggestSolution = "GPIO37/TDO";
+other1.other.tdiPin.$suggestSolution = "GPIO35/TDI";
+spi1.spi.$suggestSolution            = "SPIA";

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-31j"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_app" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/app_pe28FP.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/app_pe28FP.mak" src="package.bld"/>
+        <srcFile name="package/cfg/app_pe28FP.oe28FP.dep" src="package/cfg/app_pe28FP.c"/>
+        <srcFile name="package/cfg/app_pe28FP.dep" src="package/cfg/app_pe28FP.cfg"/>
+        <srcFile name="package/cfg/app.xe28FP.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_app.tar.dep" src="package/rel/xconfig_app.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C28_float"
+            version="ti.targets.elf.C28_float{1,0,21.6,0"
+            rawVersion="21.6.0"
+            platform="ti.platforms.sim28xx"
+            isa="28FP"
+            suffix="e28FP"
+            rootDir="C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="app"
+        pname="app.pe28FP"
+        target="ti.targets.elf.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F280025C"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/app_pe28FP.cfg"
+        xCfgPrefix="package/cfg/app_pe28FP"
+        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="app"
+        pname="app.xe28FP"
+        target="ti.targets.elf.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F280025C"
+        profile="release"
+        xCfgScript="package/cfg/app_pe28FP.cfg"
+        xCfgPrefix="package/cfg/app_pe28FP"
+        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="app.xe28FP"
+        args=""
+        groupName="app.xe28FP"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_app"
+        pname="xconfig_app.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
