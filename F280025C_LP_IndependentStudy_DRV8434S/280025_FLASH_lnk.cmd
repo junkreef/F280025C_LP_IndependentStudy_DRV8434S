@@ -5,7 +5,7 @@ MEMORY
    RAMM1            : origin = 0x00000400, length = 0x000003F8     /* on-chip RAM block M1 */
 // RAMM1_RSVD       : origin = 0x000007F8, length = 0x00000008 /* Reserve and do not use for code as per the errata advisory "Memory: Prefetching Beyond Valid Memory" */
    
-/* RAMLS4           : origin = 0x0000A000, length = 0x00000800
+/*   RAMLS4           : origin = 0x0000A000, length = 0x00000800
    RAMLS5           : origin = 0x0000A800, length = 0x00000800
    RAMLS6           : origin = 0x0000B000, length = 0x00000800
    RAMLS7           : origin = 0x0000B800, length = 0x00000800 */
@@ -63,14 +63,14 @@ SECTIONS
    .switch          : > FLASH_BANK0_SEC1,  ALIGN(8)
    .reset           : > RESET,                  TYPE = DSECT /* not used, */
 
-   .stack           : > RAMM1
+   .stack           : >> RAMM0 | RAMM1
 
    .init_array      : > FLASH_BANK0_SEC1,  ALIGN(8)
    .bss             : > RAMLS4567
    .bss:output      : > RAMLS4567
    .bss:cio         : > RAMGS0
    .const           : > FLASH_BANK0_SEC8,  ALIGN(8)
-   .data            : > RAMLS4567
+   .data            : > RAMGS0
    .sysmem          : > RAMLS4567
 
     ramgs0 : > RAMGS0

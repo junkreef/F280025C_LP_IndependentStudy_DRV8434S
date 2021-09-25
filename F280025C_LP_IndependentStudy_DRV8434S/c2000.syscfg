@@ -10,6 +10,7 @@
  */
 const epwm   = scripting.addModule("/driverlib/epwm.js", {}, false);
 const epwm1  = epwm.addInstance();
+const epwm2  = epwm.addInstance();
 const gpio   = scripting.addModule("/driverlib/gpio.js", {}, false);
 const gpio1  = gpio.addInstance();
 const gpio2  = gpio.addInstance();
@@ -19,6 +20,8 @@ const gpio5  = gpio.addInstance();
 const gpio6  = gpio.addInstance();
 const other  = scripting.addModule("/driverlib/other.js", {}, false);
 const other1 = other.addInstance();
+const sci    = scripting.addModule("/driverlib/sci.js", {}, false);
+const sci1   = sci.addInstance();
 const spi    = scripting.addModule("/driverlib/spi.js", {}, false);
 const spi1   = spi.addInstance();
 
@@ -30,6 +33,12 @@ epwm1.useInterfacePins       = ["EPWM#_A"];
 epwm1.$name                  = "DRV8434S_EPWM";
 epwm1.epwm.$assign           = "EPWM1";
 epwm1.epwm.epwm_aPin.$assign = "GPIO0";
+
+epwm2.useCase                = "CUSTOM";
+epwm2.useInterfacePins       = ["EPWM#_A"];
+epwm2.$name                  = "DAC_EPWM";
+epwm2.epwm.$assign           = "EPWM4";
+epwm2.epwm.epwm_aPin.$assign = "GPIO22";
 
 gpio1.$name           = "USER_LED_RED";
 gpio1.direction       = "GPIO_DIR_MODE_OUT";
@@ -58,6 +67,12 @@ gpio6.gpioPin.$assign = "GPIO1";
 other1.$name            = "myOTHER0";
 other1.useCase          = "CUSTOM";
 other1.useInterfacePins = ["TCK","TDI","TDO","TMS","XRSn"];
+
+sci1.$name                 = "XDS_SCI";
+sci1.rxFifo                = "SCI_FIFO_RX1";
+sci1.sci.$assign           = "SCIA";
+sci1.sci.sci_rxPin.$assign = "GPIO28";
+sci1.sci.sci_txPin.$assign = "GPIO29";
 
 spi1.$name                   = "DRV8434S_SPI";
 spi1.bitRate                 = 1000000;

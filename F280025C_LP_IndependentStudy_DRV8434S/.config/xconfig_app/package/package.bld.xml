@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/app_pe28FP.c"/>
     </sources>
     <configscripts>
-        <srcFile name="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"/>
+        <srcFile name="C:/Users/a0489849/workspace_v10/F280025C_LP_IndependentStudy_DRV8434S/app.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/app_pe28FP.cfg"
         xCfgPrefix="package/cfg/app_pe28FP"
-        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"
+        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_LP_IndependentStudy_DRV8434S/app.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/app_pe28FP.cfg"
         xCfgPrefix="package/cfg/app_pe28FP"
-        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_SYSBIOS_Typical/app.cfg"
+        cfgScript="C:/Users/a0489849/workspace_v10/F280025C_LP_IndependentStudy_DRV8434S/app.cfg"
         cfgArgs="null"
         />
     </executables>

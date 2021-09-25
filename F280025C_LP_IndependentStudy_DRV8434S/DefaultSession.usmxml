@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_144" class="java.beans.XMLDecoder">
- <object class="com.ti.uia.host.core.Session$Config">
+ <object class="com.ti.uia.host.core.Session$Config" id="Session$Config0">
+  <void property="endpoints">
+   <void method="add">
+    <object class="com.ti.uia.host.core.Session$Config$Endpoint">
+     <void property="clockFreq">
+      <long>100000000</long>
+     </void>
+     <void property="eventTransport">
+      <object class="com.ti.uia.host.core.Session$Config$Transport">
+       <void property="type">
+        <string>JTAG</string>
+       </void>
+      </object>
+     </void>
+     <void property="name">
+      <string>C28xx_CPU1</string>
+     </void>
+     <void property="outFile">
+      <string>C:\Users\a0489849\workspace_v10\F280025C_LP_IndependentStudy_DRV8434S\Debug\F280025C_LP_IndependentStudy_DRV8434S.out</string>
+     </void>
+     <void property="rtaFile">
+      <string>C:/Users/a0489849/workspace_v10/F280025C_LP_IndependentStudy_DRV8434S/Debug/configPkg/package/cfg/app_pe28FP.rta.xml</string>
+     </void>
+     <void property="uiaFile">
+      <string>C:/Users/a0489849/workspace_v10/F280025C_LP_IndependentStudy_DRV8434S/Debug/configPkg/package/cfg/app_xe28FP.uia.xml</string>
+     </void>
+    </object>
+   </void>
+  </void>
   <void property="eventTransport">
    <object class="com.ti.uia.host.core.Session$Config$Transport" id="Session$Config$Transport0">
-    <void property="file">
-     <string></string>
+    <void property="address">
+     <string>000.000.000.000</string>
     </void>
     <void property="type">
-     <string>JTAG</string>
+     <string>None</string>
     </void>
    </object>
   </void>
   <void property="msgTransport">
    <object class="com.ti.uia.host.core.Session$Config$Transport">
+    <void property="address">
+     <string>000.000.000.000</string>
+    </void>
     <void property="type">
      <string>None</string>
     </void>
@@ -25,7 +56,7 @@
   <object idref="Session$Config$Transport0"/>
   <void method="put">
    <string>Address</string>
-   <string>localhost</string>
+   <string>000.000.000.000</string>
   </void>
   <void method="put">
    <string>Port</string>
